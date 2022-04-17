@@ -1,0 +1,25 @@
+{
+  "name": {
+    "zh-cn": "巡线传感器-I2C",
+    "en": "LineFollowSensor-I2C"
+  },
+  "description": {
+    "zh-cn": "YFROBOT 巡线传感器 - I2C",
+    "en": "YFROBOT Line Follow Sensor - I2C"
+  },
+  "author": "YFROBOT",
+  "email": "yfrobot@qq.com",
+  "license": "MIT",
+  "isBoard": false,
+  "id": "yfrobot_linefollowsensor_i2c",
+  "version": "0.0.1",
+  "platform": [ "win", "mac", "web" ],
+  "asset": {
+    "arduinoC": {
+      "dir": "arduinoC/",
+      "version": "0.0.1",
+      "board": [ "microbit", "esp32", "arduino", "mega2560", "leonardo" ],
+      "main": "main.ts"
+    }
+  }
+}
