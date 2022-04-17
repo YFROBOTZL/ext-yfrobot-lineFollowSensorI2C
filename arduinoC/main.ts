@@ -11,34 +11,33 @@
 */
 
 enum LINEFOLLOWSENSORSNUM {
-    //% blockId="LFS_1" block="1"
+    //% blockId="LFS_1" block="①"
     0,
-    //% blockId="LFS_2" block="2"
+    //% blockId="LFS_2" block="②"
     1,
-    //% blockId="LFS_3" block="3"
+    //% blockId="LFS_3" block="③"
     2,
-    //% blockId="LFS_4" block="4"
+    //% blockId="LFS_4" block="④"
     3,
-    //% blockId="LFS_5" block="5"
+    //% blockId="LFS_5" block="⑤"
     4,
-    //% blockId="LFS_6" block="6"
+    //% blockId="LFS_6" block="⑥"
     5,
-    //% blockId="LFS_7" block="7"
+    //% blockId="LFS_7" block="⑦"
     6,
 }
 
 //% color="#ff6f0c" iconWidth=50 iconHeight=40
 namespace lineFollow_I2C {
 
-    //% block="read line follow sensor on [LFS_NUM]" blockType="boolean"
+    //% block="read line follow sensor [LFS_NUM] state" blockType="boolean"
     //% LFS_NUM.shadow="dropdown" LFS_NUM.options="LINEFOLLOWSENSORSNUM" LFS_NUM.defl="LINEFOLLOWSENSORSNUM.0"
-    export function readLineFollowSensors(parameter: any, block: any) {
+    export function readLineFollowSensorsI2C(parameter: any, block: any) {
         let lfs_num = parameter.LFS_NUM.code;
         Generator.addInclude("include_yfrobot_linefollow_library", `#include <Wire.h>           // Include the I2C library (required) \n#include "YFLineFollow.h"`);
         Generator.addObject("object_yfrobot_linefollow", `YFLINEFOLLOW`, `yfLS;`);
-        Generator.addSetup(`initSetup_yfrobot_linefollow`, `if (yfLS.begin() == false) { \n    Serial.println("Failed to communicate. Check wiring."); \n    while (1) ; // If we fail to communicate, loop forever. \n  }`);
+        Generator.addSetup(`initSetup_yfrobot_linefollow`, `if (yfLS.begin() == false) { \n    Serial.println("Failed to communicate. Check wiring."); \n    while (1) ; // If we fail to communicate, loop forever. \n  }\n  yfLS.enableSensor(); // 使能传感器，默认使能`);
         Generator.addCode(`yfLS.readSensor(${lfs_num})`);
     }
-
 
 }
