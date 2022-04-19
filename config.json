@@ -17,7 +17,7 @@
   "asset": {
     "arduinoC": {
       "dir": "arduinoC/",
-      "board": [ "microbit", "esp32", "arduino", "mega2560", "leonardo" ],
+      "board": [ "microbit", "esp32", "arduino","arduinounor3","arduinonano", "mega2560", "leonardo" ],
       "main": "main.ts"
     }
   }
