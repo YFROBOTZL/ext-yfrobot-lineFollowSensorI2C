@@ -471,7 +471,7 @@ uint8_t SX1508::interruptSource(bool clear /* =true*/)
 {
   uint8_t intSource = readByte(REG_INTERRUPT_SOURCE);
   if (clear)
-    writeByte(REG_INTERRUPT_SOURCE, 0xFFFF); // Clear interrupts
+    writeByte(REG_INTERRUPT_SOURCE, 0xFF); // Clear interrupts
   return intSource;
 }
 
