@@ -4,15 +4,15 @@
     "en": "LineFollowSensor-I2C"
   },
   "description": {
-    "zh-cn": "YFROBOT 巡线传感器 - I2C",
-    "en": "YFROBOT Line Follow Sensor - I2C"
+    "zh-cn": "YFROBOT I2C巡线传感器 - V0.0.2",
+    "en": "YFROBOT I2CLine Follow Sensor - V0.0.2"
   },
   "author": "YFROBOT",
   "email": "yfrobot@qq.com",
   "license": "MIT",
   "isBoard": false,
   "id": "yfrobot_linefollowsensor_i2c",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "platform": [ "win", "mac", "web" ],
   "asset": {
     "arduinoC": {

@@ -34,9 +34,9 @@ namespace lineFollow_I2C {
     //% LFS_NUM.shadow="dropdown" LFS_NUM.options="LINEFOLLOWSENSORSNUM" LFS_NUM.defl="LINEFOLLOWSENSORSNUM.0"
     export function readLineFollowSensorsI2C(parameter: any, block: any) {
         let lfs_num = parameter.LFS_NUM.code;
-        Generator.addInclude("include_yfrobot_linefollow_library", `#include <Wire.h>           // Include the I2C library (required) \n#include "YFLineFollow.h"`);
+        Generator.addInclude("include_yfrobot_linefollow_library", `#include "YFLineFollow.h"`);
         Generator.addObject("object_yfrobot_linefollow", `YFLINEFOLLOW`, `yfLS;`);
-        Generator.addSetup(`initSetup_yfrobot_linefollow`, `if (yfLS.begin() == false) { \n    Serial.println("Failed to communicate. Check wiring."); \n    while (1) ; // If we fail to communicate, loop forever. \n  }\n  yfLS.enableSensor(); // 使能传感器，默认使能`);
+        Generator.addSetup(`initSetup_yfrobot_linefollow`, `if (yfLS.begin() == false) { \n    while (1) ; // If we fail to communicate, loop forever. \n  }\n  yfLS.enableSensor(); // 使能传感器，默认使能`);
         Generator.addCode(`yfLS.readSensor(${lfs_num})`);
     }
 

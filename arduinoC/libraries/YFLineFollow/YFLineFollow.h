@@ -8,6 +8,7 @@
 ******************************************************************************/
 
 #include "Arduino.h"
+#include <Wire.h>
 #include "sx1508.h"
 
 #ifndef YFLINEFOLLOW_H

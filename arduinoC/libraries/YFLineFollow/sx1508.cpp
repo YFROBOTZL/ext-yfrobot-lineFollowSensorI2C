@@ -12,8 +12,8 @@
   Distributed as-is; no warranty is given.
 ******************************************************************************/
 
-#include <Wire.h>
 #include "Arduino.h"
+#include <Wire.h>
 #include "sx1508.h"
 
 SX1508::SX1508()
